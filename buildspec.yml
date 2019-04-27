@@ -1,0 +1,13 @@
+version: 0.1
+   
+phases:
+  install:
+    commands:
+      - npm install
+      - npm install ts-node --global
+  build:
+    commands:
+      - echo "******** Building Blog Site ********"
+      - npm run build:prerender
+      - echo "******** Uploading to S3 ********"
+      - aws s3 sync dist/browser/ s3://www-poc-scarnes
