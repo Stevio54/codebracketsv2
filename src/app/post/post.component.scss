@@ -1,0 +1,61 @@
+::ng-deep .post-title {
+    width: 100%;
+    text-align: center;
+    font-size: 1.5rem;
+    padding-top: 1rem;
+}
+
+::ng-deep .post-header-img {
+    width: 14rem;
+    margin: 0 auto;
+    display: flex;
+    max-width: 100%;
+}
+
+::ng-deep img {
+    max-width: 100%;
+}
+
+:host ::ng-deep * {
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+@media (min-width: 576px) {
+    ::ng-deep .post-title {
+        font-size: 1.5rem;
+    }
+    
+    ::ng-deep .post-header-img {
+        width: 20rem;
+    }
+}
+
+@media (min-width: 768px) {
+    ::ng-deep .post-title {
+        font-size: 2rem;
+    }
+    
+    ::ng-deep .post-header-img {
+        width: 30rem;
+    }
+}
+
+@media (min-width: 992px) {
+    ::ng-deep .post-title {
+        font-size: 2.5rem;
+    }
+    
+    ::ng-deep .post-header-img {
+        width: 35rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    ::ng-deep .post-title {
+        font-size: 2.5rem;
+    }
+    
+    ::ng-deep .post-header-img {
+        width: 35rem;
+    }
+}

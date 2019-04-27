@@ -1,0 +1,26 @@
+@import '~@clr/ui/src/main.scss';
+@import "~@ng-select/ng-select/themes/default.theme.css";
+
+html {
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 24px;
+}
+
+@media (min-width: 576px) {
+    html {
+        font-size: 28px;
+    }
+}
+
+/* You can add global styles to this file, and also import other style files */
+.post-header {
+    width: 35%;
+    margin: 0 auto;
+    display: flex;
+}
+
+blockquote {
+    padding: 0 1em;
+    color: rgba(0,0,0,.535);
+    border-left: .25em solid rgba(0,0,0,.11);
+}

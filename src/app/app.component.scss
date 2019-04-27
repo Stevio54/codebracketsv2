@@ -1,0 +1,59 @@
+:host {
+    background: #f1f1f1;
+  }
+  .nav-links {
+    background: #008591;
+  }
+  .nav-links a {
+    color: #fff;
+    display: inline-block;
+    padding: 1rem;
+    margin-right: 3rem;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+  }
+  .router-container {
+    border: 0.5rem lightgreen solid;
+    padding: 2rem;
+  }
+
+  .branding {
+      margin: 0 auto;
+  }
+
+  .cloud-header {
+    display: flex;
+    flex-basis: 7rem;
+  }
+
+  .cloud-header img {
+      height: 5rem;
+      margin-top: 1rem;
+  }
+
+  .nav-right {
+      display: flex;
+      justify-self: flex-end;
+  }
+
+  .share-links {
+      position: relative;
+      right: 0;
+  }
+
+  .share-links .nav .nav-item {
+      margin-right: 1em;
+  }
+
+  .header-0 {
+    background-color: darkgreen; }
+
+    .post-header {
+        width: 35%;
+        margin: 0 auto;
+    }
+
+    .reset-font {
+      font-size: 14px;
+    }
