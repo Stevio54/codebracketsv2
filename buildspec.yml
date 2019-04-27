@@ -5,6 +5,7 @@ phases:
     commands:
       - npm install
       - npm install ts-node --global
+      - npm install @angular/cli
   build:
     commands:
       - echo "******** Building Blog Site ********"
