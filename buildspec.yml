@@ -10,4 +10,4 @@ phases:
       - echo "******** Building Blog Site ********"
       - npm run build:prerender
       - echo "******** Uploading to S3 ********"
-      - aws s3 sync dist/browser/ s3://www-poc-scarnes
+      - aws s3 sync dist/browser/ s3://cloudbrackets.com

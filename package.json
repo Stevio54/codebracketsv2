@@ -11,7 +11,7 @@
     "start": "ng serve",
     "build": "ng build",
     "lint": "ng lint ng-universal-demo",
-    "build:client-and-server-bundles": "ng build --prod --output-hashing=none --base-href http://www-poc-scarnes.s3-website-us-west-1.amazonaws.com && ng run ng-universal-demo:server:production",
+    "build:client-and-server-bundles": "ng build --prod --output-hashing=none --base-href http://cloudbrackets.com ng run ng-universal-demo:server:production",
     "build:prerender": "npm run build:maints && npm run build:client-and-server-bundles && npm run compile:server && npm run generate:prerender",
     "build:ssr": "npm run build:client-and-server-bundles && npm run compile:server",
     "compile:server": "tsc -p server.tsconfig.json",
