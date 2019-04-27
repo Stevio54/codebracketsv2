@@ -30,7 +30,7 @@
             "styles": [
               "src/styles.scss",
               "node_modules/@clr/icons/clr-icons.min.css",
-              "node_modules/font-awesome/css/all.css",
+              "./src/assets/needed/font-awesome/css/all.css",
               "node_modules/prismjs/themes/prism-twilight.css",
               "node_modules/prismjs/plugins/line-numbers/prism-line-numbers.css",
               "./src/assets/external_styles/montserrat.css"
