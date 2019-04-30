@@ -3,6 +3,7 @@ import { Post } from '../Models/post';
 import { Meta, Title } from '@angular/platform-browser';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
+import * as rt from 'reading-time';
 
 @Component({
   selector: 'app-post',
@@ -15,6 +16,8 @@ export class PostComponent {
 
   private arcticleName: string;
 
+  public readingTime: any;
+
   constructor(private meta: Meta, private title: Title, private http: HttpClient,
     private router: ActivatedRoute) {
       this.router.paramMap.subscribe((params) => {
@@ -26,6 +29,7 @@ export class PostComponent {
   loadArticle() {
     this.http.get(`assets/content/posts/${this.arcticleName}.md`, {responseType: 'text'}).subscribe((data) => {
       this.loadedPost = new Post(this.arcticleName, data);
+      this.readingTime = rt(this.loadedPost.contents);
     });
   }
 

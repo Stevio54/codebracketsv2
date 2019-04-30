@@ -1,4 +1,22 @@
 <div class="card">
+    <div class="card-header">
+        <div class="clr-row">
+            <div class="clr-col-md-3 title-image-container" [ngClass]="{ 'clr-col-md-12': !loadedPost?.title }">
+                <img class="title-image" src="{{ loadedPost?.headerImage }}" alt="{{ loadedPost?.description ? loadedPost?.description : loadedPost?.headerImage }}" />
+            </div>
+            <div class="clr-col-md-9 title-container" *ngIf="loadedPost?.title">
+                    <h1 class="post-title">{{ loadedPost?.title }}</h1>
+                </div>
+        </div>
+    </div>
+    <div class="card-block reading-time">
+        <span class="read-time"><clr-icon shape="clock"></clr-icon>  {{ readingTime.text }} - ({{readingTime.words}} words)</span>
+        <span class="social-share">Share this on: 
+        <share-button button="facebook" theme="outline" [showText]="false" [size]="-8"></share-button>
+        <share-button button="twitter" theme="outline" [showText]="false" [size]="-8"></share-button>
+        <share-button button="linkedin" theme="outline" [showText]="false" [size]="-8"></share-button>
+        <share-button button="reddit" theme="outline" [showText]="false" [size]="-8"></share-button></span>
+    </div>
     <div class="card-block">
             <div class="card-text">
                 <markdown [data]="loadedPost?.contents" lineNumbers></markdown>

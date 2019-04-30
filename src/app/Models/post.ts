@@ -80,42 +80,11 @@ export class Post {
             }
         }
 
-        if (!listPage) {
-            this.applyMetadata(); // apply meta data changes
-        }
+        // if (!listPage) {
+        //     this.applyMetadata(); // apply meta data changes
+        // }
     }
 
-    /***
-     * This function will apply the meta data items that will become part of the post
-     */
-    applyMetadata() {
-        let metaContent = ``;
-        if (this.headerImage) {
-            // add header image to top
-            if (this.description) {
-                // set description as alt to image if available
-                metaContent += `<img src="${this.headerImage}" alt="${this.description}" class="post-header-img" />
 
-`;
-            } else {
-                // no description given
-                metaContent += `<img src="${this.headerImage}" class="post-header-img" />
-
-`;
-            }
-        }
-        if (this.title) {
-            // add header as H1 by default
-            metaContent += `<h1 class="post-title">${this.title}</h1><br/>`;
-        }
-        if (this.Subtitle) {
-            // add subtitle below header as H3 by default
-            metaContent += `<h3>${this.Subtitle}</h3>
-`;
-        }
-
-        // add to top of article
-        this.contents = metaContent + '\n' + this.contents;
-    }
 
 }

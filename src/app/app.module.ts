@@ -23,6 +23,9 @@ import { TagsComponent } from './tags/tags.component';
 
 import { NgSelectModule } from '@ng-select/ng-select';
 
+import { ShareButtonModule } from '@ngx-share/button';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,6 +41,7 @@ import { NgSelectModule } from '@ng-select/ng-select';
     FormsModule,
     HttpClientModule,
     ClarityModule,
+    ShareButtonModule,
     BrowserAnimationsModule,
     MarkdownModule.forRoot({ loader: HttpClient, markedOptions: {
       provide: MarkedOptions,
