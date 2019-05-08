@@ -4,8 +4,9 @@
             <div class="clr-col-md-3 title-image-container" [ngClass]="{ 'clr-col-md-12': !loadedPost?.title }">
                 <img class="title-image" src="{{ loadedPost?.headerImage }}" alt="{{ loadedPost?.description ? loadedPost?.description : loadedPost?.headerImage }}" />
             </div>
-            <div class="clr-col-md-9 title-container" *ngIf="loadedPost?.title">
+            <div class="clr-col-md-9 title-container" [ngClass]="{ 'clr-col-md-12': !loadedPost?.headerImage }" *ngIf="loadedPost?.title">
                     <h1 class="post-title">{{ loadedPost?.title }}</h1>
+                    <br *ngIf="loadedPost?.Subtitle"/><h3 *ngIf="loadedPost?.Subtitle">{{ loadedPost?.Subtitle }}</h3>
                 </div>
         </div>
     </div>

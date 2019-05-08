@@ -4,6 +4,7 @@ import { MarkdownService } from 'ngx-markdown';
 import { HttpClient } from '@angular/common/http';
 import { Post } from '../Models/post';
 import { PostsService } from '../posts.service';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-posts',
@@ -19,7 +20,7 @@ export class PostsComponent implements OnInit {
 
   ngOnInit() {
       this.postService.posts.subscribe((posts) => {
-        this.postsData = posts;
+        this.postsData =  _.orderBy(posts, ['date'], ['desc']);
       });
   }
 }
