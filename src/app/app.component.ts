@@ -19,6 +19,9 @@ export class AppComponent implements OnInit {
 
   viewCounts = 0;
 
+  sarcasmTextInput = '';
+  sarcasmTextOutput = '';
+
   constructor(private postService: PostsService, private routing: Router, private viewService: ViewCounterService) {
     postService.getPosts(); // get post data
     routing.events.subscribe((evt: any) => {
@@ -37,5 +40,13 @@ export class AppComponent implements OnInit {
     this.postService.latestPosts.subscribe((posts) => {
       this.latestPosts = posts;
     });
+  }
+
+  convertText() {
+    this.sarcasmTextOutput = this.convertToSarcasm(this.sarcasmTextInput);
+  }
+
+  convertToSarcasm(input: string) {
+    return input.match(/..?/g).map(function(value) { return value.charAt(0).toLowerCase() + value.charAt(1).toUpperCase(); }).join('');
   }
 }

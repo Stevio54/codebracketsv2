@@ -70,6 +70,15 @@
                             </div>
                         </div>
                     </div>
+                    <div class="card">
+                        <div class="card-header">Sarcasm Speech Convertor</div>
+                        <div class="card-block">
+                            <div class="card-text">
+                                <textarea name="startingText" id="startingText" cols="15" rows="5" [(ngModel)]="sarcasmTextInput" (input)="convertText()" placeholder="Enter text here"></textarea>
+                                <textarea name="endingText" id="endingText" cols="15" rows="5" [(ngModel)]="sarcasmTextOutput" (input)="convertText()" readonly placeholder="Converted text will output here"></textarea>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="clr-row">
