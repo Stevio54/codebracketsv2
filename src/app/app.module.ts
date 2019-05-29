@@ -25,6 +25,11 @@ import { NgSelectModule } from '@ng-select/ng-select';
 
 import { ShareButtonModule } from '@ngx-share/button';
 
+import { AngularFireModule } from '@angular/fire';
+import { environment } from '../environments/environment';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+
+
 
 @NgModule({
   declarations: [
@@ -43,6 +48,8 @@ import { ShareButtonModule } from '@ngx-share/button';
     ClarityModule,
     ShareButtonModule,
     BrowserAnimationsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
     MarkdownModule.forRoot({ loader: HttpClient, markedOptions: {
       provide: MarkedOptions,
       useValue: <MarkedOptions>{

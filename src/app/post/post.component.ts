@@ -4,6 +4,8 @@ import { Meta, Title } from '@angular/platform-browser';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
 import * as rt from 'reading-time';
+import { ViewCounterService } from '../view-counter.service';
+import { QuerySnapshot } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-post',
@@ -19,7 +21,7 @@ export class PostComponent {
   public readingTime: any;
 
   constructor(private meta: Meta, private title: Title, private http: HttpClient,
-    private router: ActivatedRoute) {
+    private router: ActivatedRoute, private viewService: ViewCounterService) {
       this.router.paramMap.subscribe((params) => {
         this.arcticleName = params.get('id');
         this.loadArticle();
@@ -30,6 +32,7 @@ export class PostComponent {
     this.http.get(`assets/content/posts/${this.arcticleName}.md`, {responseType: 'text'}).subscribe((data) => {
       this.loadedPost = new Post(this.arcticleName, data);
       this.readingTime = rt(this.loadedPost.contents);
+      this.viewService.addView(`/post/${this.arcticleName}`);
     });
   }
 

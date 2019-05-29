@@ -1,78 +1,82 @@
 <div class="main-container">
     <header class="cloud-header header-0">
         <div class="branding">
-           <img src="../assets/images/logo-light.svg" />
+            <img src="../assets/images/logo-light.svg" />
         </div>
     </header>
     <nav class="subnav">
-            <ul class="nav">
+        <ul class="nav">
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/posts" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/post','about']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">What?!</a>
+            </li>
+        </ul>
+        <div class="share-links">
+            <ul class="nav reset-font">
                 <li class="nav-item">
-                    <a class="nav-link" routerLink="/posts" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+                    <a class="nav-item" href="#" role="tooltip" aria-haspopup="true" class="tooltip tooltip-md tooltip-top-left">
+                        <span><a href="https://github.com/Stevio54"><i title="My github page" class="fab fa-github-square fa-2x"></i></a></span>
+                        <span class="tooltip-content">My Github Page</span>
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" [routerLink]="['/post','about']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">What?!</a>
+                    <a class="nav-item" href="#" role="tooltip" aria-haspopup="true" class="tooltip tooltip-md tooltip-top-left">
+                        <span><a href="https://www.linkedin.com/in/steven-carnes/"><i title="My LinkedIn profile" class="fab fa-linkedin fa-2x"></i></a></span>
+                        <span class="tooltip-content">My LinkedIn profile</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-item" href="#" role="tooltip" aria-haspopup="true" class="tooltip tooltip-md tooltip-top-left">
+                        <span> <a href="https://twitter.com/sgtstevo54"><i title="My twitter" class="fab fa-twitter fa-2x"></i></a></span>
+                        <span class="tooltip-content">My twitter</span>
+                    </a>
                 </li>
             </ul>
-            <div class="share-links">
-                    <ul class="nav reset-font">
-                            <li class="nav-item">
-                                    <a class="nav-item" href="#" role="tooltip" aria-haspopup="true" class="tooltip tooltip-md tooltip-top-left">
-                                    <span><a href="https://github.com/Stevio54"><i title="My github page" class="fab fa-github-square fa-2x"></i></a></span>
-                                    <span class="tooltip-content">My Github Page</span>
-                                    </a>
-                            </li>
-                            <li  class="nav-item">
-                                    <a class="nav-item" href="#" role="tooltip" aria-haspopup="true" class="tooltip tooltip-md tooltip-top-left">
-                                            <span><a href="https://www.linkedin.com/in/steven-carnes/"><i title="My LinkedIn profile" class="fab fa-linkedin fa-2x"></i></a></span>
-                                            <span class="tooltip-content">My LinkedIn profile</span>
-                                            </a>
-                            </li>
-                            <li  class="nav-item">
-                                    <a class="nav-item" href="#" role="tooltip" aria-haspopup="true" class="tooltip tooltip-md tooltip-top-left">
-                                            <span> <a href="https://twitter.com/sgtstevo54"><i title="My twitter" class="fab fa-twitter fa-2x"></i></a></span>
-                                            <span class="tooltip-content">My twitter</span>
-                                            </a>
-                            </li>
-                        </ul>
-            </div>
-        </nav>
+        </div>
+    </nav>
 
-        <div class="content-container">
-            <div class="content-area">
-                        
-                    <div class="clr-row">
-                                
-                                <div class="clr-col-md-8">
-                                                <router-outlet></router-outlet>
-                                    </div>
-                                    <div class="clr-col-md-4">
-                                        <div class="card">
-                                                <div class="card-header">
-                                                        Latest Posts
-                                                </div>
-                                                <div class="card-block">
-                                                        <div class="card-text">
-                                                                <ul>
-                                                                        <li *ngFor="let latest of latestPosts"><a [routerLink]="['/post', latest.name]">{{ latest.title }}</a></li>
-                                                                </ul>
-                                                        </div>
-                                                </div>
-                                        </div>
-                                        <div class="card">
-                                                <div class="card-header">Tags</div>
-                                                <div class="card-block">
-                                                        <div class="card-text">
-                                                                <ul class="list-unstyled">
-                                                                        <span class="label label-info" *ngFor="let tag of tags">
+    <div class="content-container">
+        <div class="content-area">
+
+            <div class="clr-row">
+
+                <div class="clr-col-md-8">
+                    <router-outlet></router-outlet>
+                </div>
+                <div class="clr-col-md-4">
+                    <div class="card">
+                        <div class="card-header">
+                            Latest Posts
+                        </div>
+                        <div class="card-block">
+                            <div class="card-text">
+                                <ul>
+                                    <li *ngFor="let latest of latestPosts"><a [routerLink]="['/post', latest.name]">{{ latest.title }}</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">Tags</div>
+                        <div class="card-block">
+                            <div class="card-text">
+                                <ul class="list-unstyled">
+                                    <span class="label label-info" *ngFor="let tag of tags">
                                                                                 <a [routerLink]="['/tags', tag]">{{ tag }}</a>
                                                                         </span>
-                                                                </ul>
-                                                        </div>
-                                                </div>
-                                        </div>
-                                    </div>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                    
+                </div>
+            </div>
+            <div class="clr-row">
+                <div class="clr-col-md-2 clr-offset-10 view-count">
+                    {{ viewCounts }} views
+                </div>
             </div>
         </div>
+    </div>
 </div>

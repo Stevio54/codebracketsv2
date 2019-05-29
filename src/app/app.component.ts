@@ -1,6 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import { PostsService } from './posts.service';
 import * as _ from 'lodash';
+import { Router, RouterEvent, NavigationEnd } from '@angular/router';
+import { ViewCounterService } from './view-counter.service';
+import { QuerySnapshot } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-root',
@@ -14,8 +17,17 @@ export class AppComponent implements OnInit {
 
   latestPosts = [];
 
-  constructor(private postService: PostsService) {
+  viewCounts = 0;
+
+  constructor(private postService: PostsService, private routing: Router, private viewService: ViewCounterService) {
     postService.getPosts(); // get post data
+    routing.events.subscribe((evt: any) => {
+      if (evt instanceof NavigationEnd) {
+      this.viewService.getViews(evt.urlAfterRedirects).then((items: QuerySnapshot<any>) => {
+        this.viewCounts = items.size;
+      });
+      }
+    });
   }
 
   ngOnInit() {

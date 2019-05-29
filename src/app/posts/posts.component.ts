@@ -5,6 +5,9 @@ import { HttpClient } from '@angular/common/http';
 import { Post } from '../Models/post';
 import { PostsService } from '../posts.service';
 import * as _ from 'lodash';
+import { AngularFirestore } from '@angular/fire/firestore';
+import * as m from 'moment';
+import { ViewCounterService } from '../view-counter.service';
 
 @Component({
   selector: 'app-posts',
@@ -16,11 +19,12 @@ export class PostsComponent implements OnInit {
   public postsData: Array<Post>;
 
   constructor(private meta: Meta, private title: Title, private http: HttpClient,
-    private postService: PostsService) {}
+    private postService: PostsService, private viewService: ViewCounterService) {}
 
   ngOnInit() {
       this.postService.posts.subscribe((posts) => {
         this.postsData =  _.orderBy(posts, ['date'], ['desc']);
       });
+      this.viewService.addView('/posts');
   }
 }
