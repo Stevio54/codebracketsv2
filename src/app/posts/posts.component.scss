@@ -6,6 +6,10 @@
     font-size: 20px;
 }
 
+::ng-deep .title-image {
+    max-width: 100% !important;
+}
+
 .date-span {
     // position: absolute;
     // right: 0.5rem;

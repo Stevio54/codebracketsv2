@@ -1,25 +1,33 @@
 <div *ngFor="let post of postsData">
     <div class="card">
         <div class="card-header">
-                <h1><a [routerLink]="['/post', post.name]">{{ post.title}}</a></h1>
-                <span class="date-span">
-                        {{ post.date | date: 'short' }}  <clr-icon shape="calendar"></clr-icon>
-                </span>
+            <div class="clr-row">
+                <div class="clr-col-md-3 title-image-container" [ngClass]="{ 'clr-col-md-12': !post?.title }">
+                    <img class="title-image" src="{{ post?.headerImage }}" alt="{{ post?.description ? post?.description : post?.headerImage }}" />
+                </div>
+                <div class="clr-col-md-9 title-container" [ngClass]="{ 'clr-col-md-12': !post?.headerImage }" *ngIf="post?.title">
+                    <h1><a [routerLink]="['/post', post.name]">{{ post.title}}</a></h1>
+                    <span class="date-span">
+                                            {{ post.date | date: 'short' }}  <clr-icon shape="calendar"></clr-icon>
+                                    </span>
+                </div>
+
+            </div>
         </div>
         <div class="card-block">
-                <div class="card-text">
-                        <markdown [data]="post.contents" lineNumbers></markdown>
-                </div>
-                <div class="tags">
-                        <ul class="list-unstyled">
-                                <span class="label label-info" *ngFor="let tag of post.tags">
+            <div class="card-text">
+                <markdown [data]="post.description ? post.description : post.contents" lineNumbers></markdown>
+            </div>
+            <div class="tags">
+                <ul class="list-unstyled">
+                    <span class="label label-info" *ngFor="let tag of post.tags">
                                         <a [routerLink]="['/tags', tag]">{{ tag }}</a>
                                 </span>
-                                </ul>   
-                </div>
+                </ul>
+            </div>
         </div>
         <div class="card-footer">
             <button class="btn btn-sm btn-link" [routerLink]="['/post', post.name]">Read the article</button>
-            </div>
+        </div>
     </div>
 </div>
