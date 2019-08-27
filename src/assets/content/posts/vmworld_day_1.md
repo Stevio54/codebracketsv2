@@ -2,7 +2,7 @@
 title: VMWorld Day 1
 date: 2019-08-25T20:20:00-07:00
 Subtitle: Badge Pickup / HOLs!
-tags: [blogging,blog,angular,static site,aws,s3,angular universal]
+tags: [vmware,vmworld,2019,solutions exchange,general session,the square]
 headerImage: /assets/images/VMworld-2019-COVER.png
 description: A summary of my first day at VMWorld, it was a blast and I wanted to share that with each of you!
 draft: false
