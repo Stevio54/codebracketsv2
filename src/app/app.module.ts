@@ -36,7 +36,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
     AppComponent,
     PostsComponent,
     PostComponent,
-    TagsComponent,
+    TagsComponent
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'my-app'}),

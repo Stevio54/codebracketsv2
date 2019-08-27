@@ -63,6 +63,7 @@
     "prismjs": "^1.16.0",
     "reading-time": "^1.2.0",
     "reflect-metadata": "^0.1.10",
+    "rss-generator": "0.0.3",
     "rxjs": "^6.4.0",
     "zone.js": "^0.8.26"
   },
