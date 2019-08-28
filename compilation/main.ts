@@ -11,7 +11,20 @@ export class CompileMDFiles {
         for (let i = 0; i < items.length; i++) {
             // process the file
             const fil = fs.readFileSync(p.resolve(`../src/assets/content/posts`, items[i]), { encoding: 'utf8' });
-            mdInfo.push(new Post(items[i].replace('.md', ''), fil, true));
+            try {
+                const images = fs.readdirSync(p.resolve(`../src/assets/images`, items[i].replace('.md', '')), { encoding: 'utf8' });
+                const imgs = [];
+                for (const image of images) {
+                    const newImage = {
+                        image: `assets/images/${items[i].replace('.md', '')}/${image}`,
+                        thumbImage: `assets/images/${items[i].replace('.md', '')}/${image}`
+                    };
+                    imgs.push(newImage);
+                }
+                mdInfo.push(new Post(items[i].replace('.md', ''), fil, true, imgs.length ? imgs : null));
+            } catch (error) {
+                mdInfo.push(new Post(items[i].replace('.md', ''), fil, true, null));
+            }
         }
         return mdInfo;
     }

@@ -5,9 +5,10 @@
                 <img class="title-image" src="{{ loadedPost?.headerImage }}" alt="{{ loadedPost?.description ? loadedPost?.description : loadedPost?.headerImage }}" />
             </div>
             <div class="clr-col-md-9 title-container" [ngClass]="{ 'clr-col-md-12': !loadedPost?.headerImage }" *ngIf="loadedPost?.title">
-                    <h1 class="post-title">{{ loadedPost?.title }}</h1>
-                    <br *ngIf="loadedPost?.Subtitle"/><h3 *ngIf="loadedPost?.Subtitle">{{ loadedPost?.Subtitle }}</h3>
-                </div>
+                <h1 class="post-title">{{ loadedPost?.title }}</h1>
+                <br *ngIf="loadedPost?.Subtitle" />
+                <h3 *ngIf="loadedPost?.Subtitle">{{ loadedPost?.Subtitle }}</h3>
+            </div>
         </div>
     </div>
     <div class="card-block reading-time">
@@ -19,7 +20,12 @@
         <share-button button="reddit" theme="outline" [showText]="false" [size]="-8"></share-button></span>
     </div>
     <div class="card-block">
-            <div class="card-text">
-                <markdown [data]="loadedPost?.contents" lineNumbers></markdown>
-</div></div></div>
+        <div class="card-text">
+            <markdown [data]="loadedPost?.contents" lineNumbers></markdown>
+            <div class="slider" [hidden]="!postData?.footerImages">
+                <ng-image-slider [images]="postData?.footerImages" #nav></ng-image-slider>
+            </div>
+        </div>
 
+    </div>
+</div>

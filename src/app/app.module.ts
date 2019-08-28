@@ -29,6 +29,8 @@ import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 
+import { NgImageSliderModule } from 'ng-image-slider';
+
 
 
 @NgModule({
@@ -41,6 +43,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
   imports: [
     BrowserModule.withServerTransition({appId: 'my-app'}),
     TransferHttpCacheModule,
+    NgImageSliderModule,
     CommonModule,
     NgSelectModule,
     FormsModule,

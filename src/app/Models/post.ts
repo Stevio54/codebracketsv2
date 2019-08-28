@@ -11,6 +11,8 @@ export class Post {
     date: Moment.Moment;
     draft: boolean;
     tags: Array<string>;
+    scripts: Array<string>;
+    footerImages: Array<any>;
 
     private titleExp = /^(title:)(.*?)+$/m;
     private descriptionExp = /^(description:)(.*?)+$/m;
@@ -20,18 +22,21 @@ export class Post {
     private DateExp = /^(date:)(.*?)+$/m;
     private draftExp = /^(draft:)(.*?)+$/m;
     private tagsExp = /^(tags:)(.*?)+$/m;
+    private scriptsExp = /^(scripts:)(.*?)+$/m;
 
     private metaRegEx = /^(^---$)((?!(^---$))(.*?\n))+(^---$)$/m;
 
     private summarizedEx = /(?!(^(#)+))(((?!#)(^.\n*?))+)/gm;
 
 
-    constructor(name: string, data?: string, listPage?: boolean) {
+    constructor(name: string, data?: string, listPage?: boolean, images?: Array<any>) {
         this.name = name;
 
         listPage = listPage ? true : false; // set if not given
 
         this.contents = data;
+
+        this.footerImages = images;
 
         const dataHeader = this.metaRegEx.exec(data);
 
@@ -77,6 +82,10 @@ export class Post {
             if (this.tagsExp.test(data)) {
                 // title supplied
                 this.tags = this.tagsExp.exec(data)[0].replace(/(tags: )/m, '').replace(/\[/m, '').replace(/\]/m, '').split(',');
+            }
+            if (this.scriptsExp.test(data)) {
+                // title supplied
+                this.scripts = this.scriptsExp.exec(data)[0].replace(/(scripts: )/m, '').replace(/\[/m, '').replace(/\]/m, '').split(',');
             }
         }
 

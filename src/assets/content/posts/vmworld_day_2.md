@@ -1,5 +1,5 @@
 ---
-title: VMWorld Day 2
+title: VMWorld 2019 - Day 2
 date: 2019-08-27T10:20:00-07:00
 Subtitle: Solutions Exchange / General Session / The Square
 tags: [vmware,vmworld,2019,solutions exchange,general session,the square]
