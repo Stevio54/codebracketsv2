@@ -1,5 +1,5 @@
 ---
-title: VMWorld Day 1
+title: VMWorld 2019 - Day 1
 date: 2019-08-25T20:20:00-07:00
 Subtitle: Badge Pickup / HOLs!
 tags: [vmware,vmworld,2019,solutions exchange,general session,the square]
