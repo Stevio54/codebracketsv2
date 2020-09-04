@@ -60,7 +60,7 @@
     "moment": "^2.24.0",
     "ng-image-slider": "^2.0.1",
     "ngx-markdown": "^7.1.5",
-    "node-sass": "^4.12.0",
+    "node-sass": "^4.13.1",
     "prismjs": "^1.16.0",
     "reading-time": "^1.2.0",
     "reflect-metadata": "^0.1.10",
