@@ -52,7 +52,7 @@
     "@types/lodash": "^4.14.123",
     "@webcomponents/custom-elements": "^1.0.0",
     "core-js": "^2.4.1",
-    "express": "^4.15.2",
+    "express": "^4.17.3",
     "firebase": "^6.1.0",
     "font-awesome": "^4.7.0",
     "jw-angular-social-buttons": "^1.0.0",
